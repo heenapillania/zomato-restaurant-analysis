@@ -1,108 +1,105 @@
-# Zomato Data Intelligence: Market Analysis & Business Recommendations
+# Zomato Restaurant Data Analysis: Market Insights & Business Strategy
 
-This project focuses on analyzing Zomato restaurant data to uncover trends, patterns, and insights in the global and Indian food delivery markets. The aim is to support data-driven decision-making for business strategy using Python-based data analytics tools.
+## Project Overview
+This project performs an exploratory data analysis (EDA) on Zomato restaurant data to understand global and Indian restaurant market trends. The analysis focuses on customer ratings, pricing, cuisines, online delivery availability, and regional patterns to derive actionable business insights.
 
----
-
-## 📁 Folder Structure
-
-Zomato-Capstone-Project/
-│
-├── raw/ # Original raw data files
-├── cleaned/ # Cleaned datasets for global and India-specific data
-├── notebooks/ # All Jupyter Notebooks for cleaning, visualization, insights
-│ ├── clean_data.ipynb
-│ ├── clean_data_india.ipynb
-│ ├── global_data_visualization.ipynb
-│ ├── indian_data_visualization.ipynb
-│ ├── bonus_insightful_data_visualization.ipynb
-│ └── business_recommendation_data_visualization.ipynb
-├── visuals/ # Saved charts and plots
-├── README.md # Project overview and documentation
+The objective is to demonstrate how raw food-tech data can be transformed into meaningful insights that support strategic decision-making for platforms like Zomato or similar food delivery startups.
 
 ---
 
-## 📁 Files in This Repository
+## Dataset Description
+The project uses two datasets:
+1. **Zomato restaurant dataset (CSV)** – contains restaurant-level details such as city, cuisines, ratings, cost for two, votes, and delivery options.
+2. **Country code mapping file (Excel)** – maps country codes to country names.
 
-### `01_Global_Data_Analysis.ipynb`
-Exploratory analysis of Zomato restaurant data at a global level.  
-Key questions addressed:
-- Which countries support online delivery the most?
-- How do ratings vary across countries?
-- What are the cost differences between countries?
-- Which countries have the highest number of restaurants listed?
+These datasets were merged using a **left join on Country Code** to retain all restaurant records and enrich the data with country information.
 
-Tools used: `pandas`, `matplotlib`, `seaborn`
+- Rows: ~95,000+
+- Columns (after cleaning): Restaurant Name, City, Country, Cuisines, Average Cost for Two, Currency, Ratings, Votes, Online Delivery, Table Booking, Price Range
 
 ---
 
-### `02_India_Data_Analysis.ipynb`
-In-depth analysis of the Indian restaurant market, including city-wise trends.  
-Key questions answered:
-- Which Indian cities have the most restaurants?
-- How does the average cost for two vary across cities?
-- What is the rating distribution across Indian restaurants?
-- What is the availability of online delivery in Indian cities?
+## Data Cleaning & Preprocessing
+Key preprocessing steps included:
+- Merging CSV and Excel datasets using pandas
+- Removing unnecessary columns (IDs, coordinates, addresses, UI-related fields)
+- Handling missing values by dropping rows with null values in critical columns (e.g., cuisines)
+- Removing duplicate restaurant entries based on restaurant name and city
+- Filtering invalid rating values (aggregate rating = 0)
+- Standardizing column names for consistency
+
+These steps ensured the dataset was clean, relevant, and suitable for analysis.
 
 ---
 
-### `03_Bonus_Insights.ipynb`
-Additional deep dives into interesting angles from the data.  
-Includes:
-- Most common cuisines
-- Relation between cost and rating
-- Analysis of restaurants with high ratings and votes
+## Key Analysis Performed
 
----
+### Global-Level Analysis
+- Countries with the highest number of restaurants listed on Zomato
+- Average restaurant ratings across countries
+- Online delivery availability by country
+- Comparison of average cost for two across countries
 
-### `04_Business_Recommendations.ipynb`
-Summarizes key findings from the previous analyses and presents  
-**data-driven business recommendations** that could help platforms like Zomato or similar food tech businesses improve customer satisfaction, market penetration, and service offerings.
+### India-Specific Analysis
+- Indian cities with the highest number of restaurants
+- Most popular cuisines in India
+- Distribution of restaurant ratings
+- Relationship between cost for two and ratings
+- Online delivery availability across Indian cities
+- Relationship between votes and ratings
+
+### Bonus Insights
+- Do expensive restaurants always have higher ratings?
+- Identification of outliers in pricing and ratings
+- Effect of table booking on restaurant ratings
 
 ---
 
 ## Key Insights
-
-- New Delhi has the highest number of Zomato-listed restaurants in India.
-- Most countries don't offer online delivery; India is an exception.
-- Certain Indian cities like Ghaziabad and Guwahati are underserved.
-- Restaurants with table booking generally receive better ratings.
-- Average cost for two doesn't always correlate with higher ratings.
-
----
-
-## Skills & Tools Used
-
-- Python (pandas, matplotlib, seaborn)
-- Data Cleaning & Preprocessing
-- Exploratory Data Analysis (EDA)
-- Business Intelligence & Insight Generation
-- Jupyter Notebooks
-- Data Visualization
+- India has one of the highest numbers of Zomato-listed restaurants globally.
+- Online delivery is not widely supported across many countries, while India shows strong adoption.
+- Major cities like New Delhi and Bangalore dominate restaurant listings.
+- Higher price does not necessarily imply better ratings.
+- Restaurants offering table booking and online delivery generally receive higher customer ratings.
 
 ---
 
-## Project Highlights
-
-- Covers both **global and Indian market analysis**
-- Includes **business recommendations** based on data
-- Built using **clean code and modular notebooks**
-- Suitable for resumes, portfolios, and LinkedIn projects
+## Business Recommendations
+Based on the analysis:
+- New food-tech startups should prioritize expansion in high-density cities while exploring underserved cities.
+- Online delivery should be a key focus area, especially in the Indian market.
+- Mid-range pricing strategies tend to perform better than extreme low or high pricing.
+- Cuisine selection should be aligned with regional popularity and demand.
 
 ---
 
-## How to Use
+## Limitations
+- Customer ratings are subjective and may contain bias.
+- Some countries have significantly fewer observations, which can affect average comparisons.
+- The dataset does not include customer-level or revenue-level data, limiting deeper behavioral analysis.
 
-1. Clone the repository  
-2. Open any of the `.ipynb` files in Jupyter Notebook or VS Code  
-3. Run the cells in order to view visualizations and insights
+---
+
+## Tools & Technologies
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+---
+
+## Project Use Cases
+- Internship and entry-level data analyst roles
+- Portfolio project showcasing EDA and business insight generation
+- Practice dataset for data visualization and analytical storytelling
 
 ---
 
 ## Author
+**Heena Pillania**  
+M.Sc. Mathematics and Computing, IIT Hyderabad  
+Aspiring Data Analyst  
+📧 Email: heenapillania82@gmail.com  
+🔗 LinkedIn: https://www.linkedin.com/in/heenapillania
 
-**[HEENA PILLANIA]**  
-Aspiring Data Analyst | Learning Python, Data Analysis & Visualization  
-[LinkedIn](www.linkedin.com/in/heenapillania) | [Email](heenapillania82@gmail.com)
-
----
